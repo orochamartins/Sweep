@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SweepApp: App {
+    
+    @StateObject private var activities = ActivitiesStore()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ActivitiesView(activities: $activities.activities)
         }
     }
 }

@@ -29,8 +29,8 @@ struct Activity: Identifiable, Codable {
 extension Activity {
     static let sampleData: [Activity] =
     [
-        Activity(title: "Bathroom", icon: "triangle", theme: .teal, image: "example.svg", isCompleted: false),
-        Activity(title: "Garage", icon: "triangle", theme: .orange, image: "example.svg", isCompleted: false),
-        Activity(title: "Kitchen", icon: "triangle", theme: .tan, image: "example.svg", isCompleted: false)
+        Activity(title: "Bathroom", icon: "toilet", theme: .teal, image: "example.svg", isCompleted: false),
+        Activity(title: "Garage", icon: "door.garage.closed", theme: .orange, image: "example.svg", isCompleted: false),
+        Activity(title: "Kitchen", icon: "fork.knife", theme: .tan, image: "example.svg", isCompleted: false)
     ]
 }
