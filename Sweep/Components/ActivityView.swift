@@ -27,14 +27,7 @@ struct ActivityView: View {
             .fontWeight(.medium)
             
             HStack {
-                ForEach(["S", "M", "T", "W", "T", "F", "S"], id: \.self) { day in
-                    Text(day)
-                        .font(.title3)
-                        .frame(width: 32, height: 32)
-                        .background(activity.theme.mainColor.opacity(0.15))
-                        .foregroundColor(activity.theme.mainColor)
-                        .cornerRadius(8)
-                }
+                WeekdaysView(activity: activity)
             }
             .padding()
         }
