@@ -13,14 +13,9 @@ struct WeekdaysView: View {
     @State private var today: [Day] = [.Wednesday]
     
     var body: some View {
-        HStack {
+        HStack(spacing: 12) {
             ForEach(Day.allCases, id: \.self) { day in
-                Text(String(day.rawValue.first!))
-                    .font(.title3)
-                    .frame(width: 32, height: 32)
-                    .background(today.contains(day) ? activity.theme.mainColor : activity.theme.mainColor.opacity(0.15))
-                    .foregroundColor(today.contains(day) ? .white : activity.theme.mainColor)
-                    .cornerRadius(8)
+                SingleDayView(activity: activity, day: day, today: today)
             }
         }
     }
