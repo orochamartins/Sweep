@@ -32,6 +32,7 @@ struct ActivityView: View {
             .font(.title2)
             .fontWeight(.medium)
             
+            
             HStack {
                 WeekdaysView(activity: activity)
                 Spacer()
@@ -48,6 +49,13 @@ struct ActivityView: View {
                 }
             }
             .padding(24)
+            
+            VStack {
+                HorizontalDivider(color: activity.theme.mainColor.opacity(0.25))
+                
+                TaskView(activity: activity)
+            }
+            .padding([.horizontal, .bottom], 24)
         }
         .background(activity.theme.mainColor.opacity(0.1).gradient)
         .cornerRadius(20)
