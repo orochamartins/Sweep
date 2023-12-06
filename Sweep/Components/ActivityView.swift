@@ -10,6 +10,7 @@ import SwiftUI
 struct ActivityView: View {
     
     @Binding var activity: Activity
+    @State var substasks: [TaskView] = []
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -53,7 +54,7 @@ struct ActivityView: View {
             VStack {
                 HorizontalDivider(color: activity.theme.mainColor.opacity(0.25))
                 
-                TaskView(activity: activity)
+                TaskView(subtasks: $substasks, activity: activity)
             }
             .padding([.horizontal, .bottom], 24)
         }
