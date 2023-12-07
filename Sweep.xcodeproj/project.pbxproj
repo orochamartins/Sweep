@@ -12,6 +12,8 @@
 		7F724F432B1DC511003D3E96 /* SweepTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F724F422B1DC511003D3E96 /* SweepTextFieldStyle.swift */; };
 		7F76A4E12B15D9B800F5E23E /* ActivitiesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76A4E02B15D9B800F5E23E /* ActivitiesStore.swift */; };
 		7F76A4E42B15DAD300F5E23E /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76A4E32B15DAD300F5E23E /* ActivityView.swift */; };
+		7F77DBEC2B21B606005F382C /* SubtaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F77DBEB2B21B606005F382C /* SubtaskItem.swift */; };
+		7F77DBEE2B21B75C005F382C /* SubtaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F77DBED2B21B75C005F382C /* SubtaskItemView.swift */; };
 		7F77EE0D2B187AD000CC1066 /* SingleDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F77EE0C2B187AD000CC1066 /* SingleDayView.swift */; };
 		7F857D8E2B1485B300C5E15B /* SweepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F857D8D2B1485B300C5E15B /* SweepApp.swift */; };
 		7F857D902B1485B300C5E15B /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F857D8F2B1485B300C5E15B /* ActivitiesView.swift */; };
@@ -28,6 +30,8 @@
 		7F724F422B1DC511003D3E96 /* SweepTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweepTextFieldStyle.swift; sourceTree = "<group>"; };
 		7F76A4E02B15D9B800F5E23E /* ActivitiesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesStore.swift; sourceTree = "<group>"; };
 		7F76A4E32B15DAD300F5E23E /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		7F77DBEB2B21B606005F382C /* SubtaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtaskItem.swift; sourceTree = "<group>"; };
+		7F77DBED2B21B75C005F382C /* SubtaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtaskItemView.swift; sourceTree = "<group>"; };
 		7F77EE0C2B187AD000CC1066 /* SingleDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDayView.swift; sourceTree = "<group>"; };
 		7F857D8A2B1485B300C5E15B /* Sweep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sweep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F857D8D2B1485B300C5E15B /* SweepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweepApp.swift; sourceTree = "<group>"; };
@@ -57,6 +61,7 @@
 				7F724F422B1DC511003D3E96 /* SweepTextFieldStyle.swift */,
 				7FD021E02B206F6F00445F43 /* HorizontalDivider.swift */,
 				7F76A4E32B15DAD300F5E23E /* ActivityView.swift */,
+				7F77DBED2B21B75C005F382C /* SubtaskItemView.swift */,
 				7F77EE0C2B187AD000CC1066 /* SingleDayView.swift */,
 				7F7147462B17329000DAE797 /* WeekdaysView.swift */,
 			);
@@ -105,6 +110,7 @@
 			children = (
 				7F857D9C2B148B1300C5E15B /* Theme.swift */,
 				7F857D9E2B148CE700C5E15B /* Activity.swift */,
+				7F77DBEB2B21B606005F382C /* SubtaskItem.swift */,
 				7F76A4E02B15D9B800F5E23E /* ActivitiesStore.swift */,
 			);
 			path = Models;
@@ -183,11 +189,13 @@
 				7F724F412B1DC316003D3E96 /* TaskView.swift in Sources */,
 				7F857D9D2B148B1300C5E15B /* Theme.swift in Sources */,
 				7F724F432B1DC511003D3E96 /* SweepTextFieldStyle.swift in Sources */,
+				7F77DBEE2B21B75C005F382C /* SubtaskItemView.swift in Sources */,
 				7F77EE0D2B187AD000CC1066 /* SingleDayView.swift in Sources */,
 				7F7147472B17329000DAE797 /* WeekdaysView.swift in Sources */,
 				7F857D902B1485B300C5E15B /* ActivitiesView.swift in Sources */,
 				7F857D9F2B148CE700C5E15B /* Activity.swift in Sources */,
 				7F76A4E12B15D9B800F5E23E /* ActivitiesStore.swift in Sources */,
+				7F77DBEC2B21B606005F382C /* SubtaskItem.swift in Sources */,
 				7FD021E12B206F6F00445F43 /* HorizontalDivider.swift in Sources */,
 				7F857D8E2B1485B300C5E15B /* SweepApp.swift in Sources */,
 				7F76A4E42B15DAD300F5E23E /* ActivityView.swift in Sources */,

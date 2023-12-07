@@ -13,6 +13,7 @@ struct Activity: Identifiable, Codable {
     var icon: String
     var theme: Theme
     var image: String
+    var subtasks: [SubtaskItem] = []
     var isCompleted: Bool
     var daysCompleted: [Date] = []
     
