@@ -12,6 +12,7 @@ struct TaskView: View {
     @State private var isCompleted = false
     @State private var textInput = ""
     @Binding var activity: Activity
+    @Binding var isShowing: Bool
     
     var body: some View {
         VStack {
@@ -24,6 +25,7 @@ struct TaskView: View {
                     let newSubtask = SubtaskItem(description: textInput, isCompleted: false)
                     activity.subtasks.append(newSubtask)
                     isCompleted = true
+                    isShowing = false
                         
                 } label: {
                     Image(systemName: "checkmark")
@@ -43,6 +45,6 @@ struct TaskView: View {
 
 struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskView(activity: .constant(Activity.sampleData[0]))
+        TaskView(activity: .constant(Activity.sampleData[0]), isShowing: .constant(true))
     }
 }

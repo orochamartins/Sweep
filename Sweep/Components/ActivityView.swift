@@ -10,6 +10,7 @@ import SwiftUI
 struct ActivityView: View {
     
     @Binding var activity: Activity
+    @State private var isShowing: Bool = true
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -37,7 +38,7 @@ struct ActivityView: View {
                 WeekdaysView(activity: activity)
                 Spacer()
                 Button {
-                    
+                    isShowing = true
                 } label: {
                     Image(systemName: "plus")
                         .font(.headline)
@@ -51,9 +52,13 @@ struct ActivityView: View {
             .padding(24)
             
             VStack {
+                
                 HorizontalDivider(color: activity.theme.mainColor.opacity(0.25))
                 
-                TaskView(activity: $activity)
+                if activity.subtasks.isEmpty || isShowing {
+                    TaskView(activity: $activity, isShowing: $isShowing)
+                    
+                } else { }
                 
                 ForEach(activity.subtasks) { subtask in
                     SubtaskItemView(subtask: subtask, activity: activity)
