@@ -55,12 +55,15 @@ struct ActivityView: View {
                 
                 HorizontalDivider(color: activity.theme.mainColor.opacity(0.25))
                 
+                
                 if activity.subtasks.isEmpty || isShowing {
-                    TaskView(activity: $activity, isShowing: $isShowing)
+                    withAnimation {
+                        TaskView(activity: $activity, isShowing: $isShowing)
+                    }
                     
                 } else { }
                 
-                ForEach(activity.subtasks) { subtask in
+                ForEach($activity.subtasks) { subtask in
                     SubtaskItemView(subtask: subtask, activity: activity)
                 }
             }
