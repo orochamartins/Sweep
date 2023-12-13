@@ -24,16 +24,6 @@ struct SubtaskItemView: View {
             .toggleStyle(iOSCheckboxToggleStyle())
             .foregroundColor(activity.theme.mainColor)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding()
-        .background(.white)
-        .cornerRadius(20)
-        .overlay {
-            RoundedRectangle(cornerRadius: 20)
-                .strokeBorder(activity.theme.mainColor.opacity(0.15).gradient, lineWidth: 2)
-        }
-        .fontDesign(.rounded)
-        .fontWeight(.semibold)
     }
 }
 

@@ -62,15 +62,28 @@ struct ActivityView: View {
                     }
                     
                 } else { }
-                
-                ForEach($activity.subtasks) { subtask in
-                    SubtaskItemView(subtask: subtask, activity: activity)
+                VStack {
+                    ForEach($activity.subtasks) { subtask in
+                        SubtaskItemView(subtask: subtask, activity: activity)
+                        if (activity.subtasks.last != nil) { } else {
+                            HorizontalDivider(color: activity.theme.mainColor.opacity(0.25))
+                        }
+                    }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                .background(.white)
+                .cornerRadius(20)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 20)
+                        .strokeBorder(activity.theme.mainColor.opacity(0.15).gradient, lineWidth: 2)
+                }
+                .fontWeight(.semibold)
             }
             .padding([.horizontal, .bottom], 24)
         }
         .background(activity.theme.mainColor.opacity(0.1).gradient)
-        .cornerRadius(20)
+        .cornerRadius(24)
         .overlay {
             RoundedRectangle(cornerRadius: 20)
                 .strokeBorder(activity.theme.mainColor.opacity(0.15).gradient, lineWidth: 4)
