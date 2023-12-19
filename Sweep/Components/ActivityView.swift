@@ -53,32 +53,30 @@ struct ActivityView: View {
             
             VStack {
                 
-                HorizontalDivider(color: activity.theme.mainColor.opacity(0.25))
-                
-                
-                if activity.subtasks.isEmpty || isShowing {
+                 if activity.subtasks.isEmpty || isShowing {
                     withAnimation {
                         TaskView(activity: $activity, isShowing: $isShowing)
                     }
                     
-                } else { }
-                VStack {
-                    ForEach($activity.subtasks) { subtask in
-                        SubtaskItemView(subtask: subtask, activity: activity)
-                        if (activity.subtasks.last != nil) { } else {
+                }
+                
+                if !activity.subtasks.isEmpty {
+                    VStack {
+                        ForEach($activity.subtasks) { subtask in
+                            SubtaskItemView(subtask: subtask, activity: activity)
                             HorizontalDivider(color: activity.theme.mainColor.opacity(0.25))
                         }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                        .background(.white)
+                        .cornerRadius(20)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 20)
+                                .strokeBorder(activity.theme.mainColor.opacity(0.15).gradient, lineWidth: 2)
+                        }
+                        .fontWeight(.semibold)
                     }
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
-                .background(.white)
-                .cornerRadius(20)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 20)
-                        .strokeBorder(activity.theme.mainColor.opacity(0.15).gradient, lineWidth: 2)
-                }
-                .fontWeight(.semibold)
             }
             .padding([.horizontal, .bottom], 24)
         }
