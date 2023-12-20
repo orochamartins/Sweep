@@ -62,20 +62,23 @@ struct ActivityView: View {
                 
                 if !activity.subtasks.isEmpty {
                     VStack {
-                        ForEach($activity.subtasks) { subtask in
-                            SubtaskItemView(subtask: subtask, activity: activity)
-                            HorizontalDivider(color: activity.theme.mainColor.opacity(0.25))
+                        ForEach(Array(activity.subtasks.enumerated()), id: \.element.id) { index, subtask in
+                            SubtaskItemView(subtask: $activity.subtasks[index], activity: activity)
+                            
+                            if index != activity.subtasks.indices.last {
+                                HorizontalDivider(color: activity.theme.mainColor.opacity(0.25))
+                            }
                         }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
-                        .background(.white)
-                        .cornerRadius(20)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 20)
-                                .strokeBorder(activity.theme.mainColor.opacity(0.15).gradient, lineWidth: 2)
-                        }
-                        .fontWeight(.semibold)
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                    .background(.white)
+                    .cornerRadius(20)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 20)
+                            .strokeBorder(activity.theme.mainColor.opacity(0.15).gradient, lineWidth: 2)
+                    }
+                    .fontWeight(.semibold)
                 }
             }
             .padding([.horizontal, .bottom], 24)
