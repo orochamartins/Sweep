@@ -10,11 +10,11 @@ import SwiftUI
 @main
 struct SweepApp: App {
     
-    @StateObject private var activities = ActivitiesStore()
+    @StateObject private var stickiesData = Stickies()
     
     var body: some Scene {
         WindowGroup {
-            ActivitiesView(activities: $activities.activities)
+            StickiesView(stickiesData: $stickiesData.stickies)
         }
     }
 }
