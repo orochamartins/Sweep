@@ -27,7 +27,8 @@ struct SingleStickyView: View {
                 .strokeBorder(sticky.theme.mainColor.opacity(0.15).gradient, lineWidth: 4)
         }
         .font(.custom("HomemadeApple-Regular.ttf", size: 40))
-        .foregroundColor(.black.opacity(0.5))
+        .foregroundColor(sticky.theme.mainColor)
+        .fontWeight(.semibold)
         .fontDesign(.rounded)
     }
 }
