@@ -12,10 +12,15 @@ struct SingleStickyView: View {
     @Binding var sticky: Sticky
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(sticky.description)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            Spacer()
+        ZStack(alignment: .leading) {
+            
+            StickyBackgroundView(sticky: $sticky)
+            
+            VStack(alignment: .leading) {
+                Text(sticky.description)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Spacer()
+            }
         }
         .frame(width: 200, height: 200)
         .padding(16)

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7F76A4E12B15D9B800F5E23E /* Stickies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76A4E02B15D9B800F5E23E /* Stickies.swift */; };
 		7F76A4E42B15DAD300F5E23E /* SingleStickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76A4E32B15DAD300F5E23E /* SingleStickyView.swift */; };
+		7F7886B62B43FE4900DF55D6 /* StickyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7886B52B43FE4900DF55D6 /* StickyBackgroundView.swift */; };
 		7F857D8E2B1485B300C5E15B /* SweepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F857D8D2B1485B300C5E15B /* SweepApp.swift */; };
 		7F857D902B1485B300C5E15B /* StickiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F857D8F2B1485B300C5E15B /* StickiesView.swift */; };
 		7F857D922B1485B500C5E15B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F857D912B1485B500C5E15B /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		7F76A4E02B15D9B800F5E23E /* Stickies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stickies.swift; sourceTree = "<group>"; };
 		7F76A4E32B15DAD300F5E23E /* SingleStickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStickyView.swift; sourceTree = "<group>"; };
 		7F778B902B34AD2A00BAB90C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7F7886B52B43FE4900DF55D6 /* StickyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyBackgroundView.swift; sourceTree = "<group>"; };
 		7F857D8A2B1485B300C5E15B /* Sweep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sweep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F857D8D2B1485B300C5E15B /* SweepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweepApp.swift; sourceTree = "<group>"; };
 		7F857D8F2B1485B300C5E15B /* StickiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickiesView.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 		7F76A4E22B15DA6800F5E23E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7F7886B52B43FE4900DF55D6 /* StickyBackgroundView.swift */,
 				7F76A4E32B15DAD300F5E23E /* SingleStickyView.swift */,
 			);
 			path = Components;
@@ -169,6 +172,7 @@
 			files = (
 				7F857D9D2B148B1300C5E15B /* Theme.swift in Sources */,
 				7F857D902B1485B300C5E15B /* StickiesView.swift in Sources */,
+				7F7886B62B43FE4900DF55D6 /* StickyBackgroundView.swift in Sources */,
 				7F857D9F2B148CE700C5E15B /* Sticky.swift in Sources */,
 				7F76A4E12B15D9B800F5E23E /* Stickies.swift in Sources */,
 				7F857D8E2B1485B300C5E15B /* SweepApp.swift in Sources */,
