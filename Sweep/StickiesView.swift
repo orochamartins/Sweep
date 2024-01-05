@@ -31,6 +31,7 @@ struct StickiesView: View {
                         .gesture(
                         DragGesture()
                             .onChanged { gesture in
+                                sticky.scale = 1.1
                                 var newLocation = startLocation ?? sticky.position
                                 newLocation.x += gesture.translation.width
                                 newLocation.y += gesture.translation.height
