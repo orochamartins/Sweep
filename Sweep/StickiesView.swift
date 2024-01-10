@@ -23,19 +23,22 @@ struct StickiesView: View {
                 ])
             }
             GeometryReader { geometry in
-                ForEach($stickiesData) { $sticky in
+                ForEach(Array($stickiesData.enumerated().reversed()), id: \.element.id) { index, $sticky in
                     SingleStickyView(sticky: $sticky)
                         .scaleEffect(sticky.scale)
                         .rotationEffect(Angle(degrees: sticky.rotation))
                         .position(sticky.position)
                         .gesture(
-                        DragGesture()
+                            DragGesture(minimumDistance: 0)
                             .onChanged { gesture in
                                 sticky.scale = 1.1
                                 var newLocation = startLocation ?? sticky.position
                                 newLocation.x += gesture.translation.width
                                 newLocation.y += gesture.translation.height
                                 sticky.position = newLocation
+                                
+                                let sticky = stickiesData.remove(at: index)
+                                stickiesData.insert(sticky, at: 0)
                             }
                             .updating($startLocation) { (value, startLocation, transaction) in
                                 startLocation = startLocation ?? sticky.position
