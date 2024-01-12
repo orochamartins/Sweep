@@ -23,7 +23,6 @@ struct StickyBackgroundView: View {
                 }
             }
         }
-        .foregroundStyle(.linearGradient(colors: [sticky.theme.mainColor.opacity(0.15), sticky.theme.mainColor.opacity(0)], startPoint: .top, endPoint: .bottom))
         .frame(width: 200, height: 200)
         .padding(4)
     }

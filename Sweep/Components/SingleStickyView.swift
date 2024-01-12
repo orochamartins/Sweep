@@ -12,18 +12,22 @@ struct SingleStickyView: View {
     @Binding var sticky: Sticky
     
     var body: some View {
-        ZStack(alignment: .leading) {
+        ZStack(alignment: .center) {
             
-            StickyBackgroundView(sticky: $sticky)
+            LinearGradient(gradient: Gradient(colors: [sticky.theme.mainColor.opacity(0.0), sticky.theme.mainColor.opacity(0.15)]), startPoint: .top, endPoint: .bottom)
+                .frame(width: 220, height: 220, alignment: .center)
+                .mask(StickyBackgroundView(sticky: $sticky))
             
+            
+
             VStack(alignment: .leading) {
                 Text(sticky.description)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Spacer()
             }
+            .padding(16)
         }
-        .frame(width: 200, height: 200)
-        .padding(16)
+        .frame(width: 236, height: 236)
         .background(sticky.theme.mainColor.opacity(0.1).gradient)
         .background(.white)
         .cornerRadius(24)
