@@ -21,13 +21,6 @@ struct StickiesView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Button("Create") {
-                    stickiesData.append(contentsOf: [
-                        Sticky(description: "We need to clean the kitchen!", icon: "circle.fill", theme: .teal, position: CGPoint(x: 10, y: 200), rotation: 5.0, scale: 1.0),
-                        Sticky(description: "There's dirt in the entrance...", icon: "triangle.fill", theme: .orange, position: CGPoint(x: -40, y: -100), rotation: 2.0, scale: 1.0),
-                        Sticky(description: "Buy Christmas gifts!", icon: "square.fill", theme: .bubblegum, position: CGPoint(x: 110, y: 220), rotation: 0.0, scale: 1.0)
-                    ])
-                }
                 GeometryReader { geometry in
                     ForEach(Array($stickiesData.enumerated().reversed()), id: \.element.id) { index, $sticky in
                         SingleStickyView(sticky: $sticky)
@@ -67,6 +60,70 @@ struct StickiesView: View {
                     }
                 }
             }
+            
+            VStack {
+                Rectangle()
+                 .fill(.ultraThinMaterial)
+                 .mask {
+                     VStack(spacing: 0) {
+                         LinearGradient(
+                             colors: [
+                                 Color.white.opacity(1),
+                                 Color.white.opacity(0),
+                             ],
+                             startPoint: .top,
+                             endPoint: .bottom
+                         )
+                     }
+                 }
+                 .frame(height: 150)
+                 .allowsHitTesting(false)
+                
+                Spacer()
+                ZStack {
+                   Rectangle()
+                    .fill(.ultraThinMaterial)
+                    .mask {
+                        VStack(spacing: 0) {
+                            LinearGradient(
+                                colors: [
+                                    Color.white.opacity(1),
+                                    Color.white.opacity(0),
+                                ],
+                                startPoint: .bottom,
+                                endPoint: .top
+                            )
+                        }
+                    }
+                    .frame(height: 150)
+                    .allowsHitTesting(false)
+                    
+                    Button {
+                        stickiesData.append(contentsOf: [
+                            Sticky(description: "We need to clean the kitchen!", icon: "circle.fill", theme: .teal, position: CGPoint(x: 10, y: 200), rotation: 5.0, scale: 1.0),
+                            Sticky(description: "There's dirt in the entrance...", icon: "triangle.fill", theme: .orange, position: CGPoint(x: -40, y: -100), rotation: 2.0, scale: 1.0),
+                            Sticky(description: "Buy Christmas gifts!", icon: "square.fill", theme: .bubblegum, position: CGPoint(x: 110, y: 220), rotation: 0.0, scale: 1.0)
+                        ])
+                    } label: {
+                        HStack {
+                            Image(systemName: "plus")
+                            Text("Add Stickie")
+                        }
+                        .padding()
+                        .background(.black.gradient)
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .cornerRadius(24)
+                        .fontWeight(.semibold)
+                        .fontDesign(.rounded)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 24)
+                                .strokeBorder(.white.opacity(0.3).gradient, lineWidth: 3)
+                        }
+                    }
+                }
+            }
+            .ignoresSafeArea()
         }
     }
 }
