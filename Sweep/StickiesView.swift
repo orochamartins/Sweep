@@ -13,6 +13,8 @@ struct StickiesView: View {
     
     @GestureState private var startLocation: CGPoint? = nil
     
+    @State private var showSheet: Bool = false
+    
     var body: some View {
         ZStack {
             Image("background_dot")
@@ -99,6 +101,7 @@ struct StickiesView: View {
                     .allowsHitTesting(false)
                     
                     Button {
+                        showSheet = true
                         stickiesData.append(contentsOf: [
                             Sticky(description: "We need to clean the kitchen!", icon: "circle.fill", theme: .teal, position: CGPoint(x: 10, y: 200), rotation: 5.0, scale: 1.0),
                             Sticky(description: "There's dirt in the entrance...", icon: "triangle.fill", theme: .orange, position: CGPoint(x: -40, y: -100), rotation: 2.0, scale: 1.0),
