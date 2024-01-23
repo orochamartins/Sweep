@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StickyBackgroundView: View {
     
-    @Binding var sticky: Sticky
+    let sticky: Sticky
     
     var body: some View {
         VStack(spacing: 0) {
@@ -30,6 +30,6 @@ struct StickyBackgroundView: View {
 
 struct StickyBackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        StickyBackgroundView(sticky: .constant(Sticky.sampleData[1]))
+        StickyBackgroundView(sticky: Sticky.sampleData[1])
     }
 }

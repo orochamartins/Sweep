@@ -9,14 +9,14 @@ import SwiftUI
 
 struct SingleStickyView: View {
     
-    @Binding var sticky: Sticky
+    let sticky: Sticky
     
     var body: some View {
         ZStack(alignment: .center) {
             
             LinearGradient(gradient: Gradient(colors: [sticky.theme.mainColor.opacity(0.0), sticky.theme.mainColor.opacity(0.15)]), startPoint: .top, endPoint: .bottom)
                 .frame(width: 220, height: 220, alignment: .center)
-                .mask(StickyBackgroundView(sticky: $sticky))
+                .mask(StickyBackgroundView(sticky: sticky))
             
             
 
@@ -44,6 +44,6 @@ struct SingleStickyView: View {
 
 struct SingleStickyView_Previews: PreviewProvider {
     static var previews: some View {
-        SingleStickyView(sticky: .constant(Sticky.sampleData[0]))
+        SingleStickyView(sticky: Sticky.sampleData[0])
     }
 }

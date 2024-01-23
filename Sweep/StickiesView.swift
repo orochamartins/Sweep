@@ -25,7 +25,7 @@ struct StickiesView: View {
             VStack {
                 GeometryReader { geometry in
                     ForEach(Array($stickiesData.enumerated().reversed()), id: \.element.id) { index, $sticky in
-                        SingleStickyView(sticky: $sticky)
+                        SingleStickyView(sticky: sticky)
                             .scaleEffect(sticky.scale)
                             .rotationEffect(Angle(degrees: sticky.rotation))
                             .position(sticky.position)
@@ -127,6 +127,12 @@ struct StickiesView: View {
                 }
             }
             .ignoresSafeArea()
+            
+            if showSheet {
+                withAnimation {
+                    SheetOneView()
+                }
+            }
         }
     }
 }

@@ -9,18 +9,17 @@ import SwiftUI
 
 struct SheetOneView: View {
     
-    @Binding var sticky: Sticky
-    
     let columns = [GridItem(.adaptive(minimum: 48))]
+    
+    @State private var newColor: Theme = .bubblegum
     
     var body: some View {
         ZStack {
-            Color.black.opacity(0.2)
-                .ignoresSafeArea()
+            
             VStack {
                 
                 VStack {
-                    SingleStickyView(sticky: $sticky)
+                    SingleStickyView(sticky: Sticky(description: "Write a message here!", icon: "circle.fill", theme: newColor, position: CGPoint(x: 10, y: 200), rotation: 5.0, scale: 1.0))
                 }
                 .frame(maxHeight: .infinity)
                 
@@ -49,16 +48,17 @@ struct SheetOneView: View {
                         .padding(.bottom, 16)
                     
                     LazyVGrid(columns: columns, spacing: 24) {
+                        
                         ForEach(Theme.allCases) { color in
                             Button {
-                                
+                                newColor = color
                             } label: {
                                 Circle()
                                     .frame(width: 40, height: 40)
                                     .tint(color.mainColor.gradient)
                                     .overlay {
                                         Circle()
-                                            .strokeBorder(.black.opacity(0.05).gradient, lineWidth: 4)
+                                            .strokeBorder(newColor == color ? .black.opacity(0.6) : .white.opacity(0.8), lineWidth: 4)
                                     }
                             }
                         }
@@ -93,15 +93,16 @@ struct SheetOneView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .background(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .clipShape(RoundedRectangle(cornerRadius: 32))
                 .padding(.horizontal)
             }
         }
+        .background(.ultraThinMaterial.opacity(0.8))
     }
 }
 
 struct SheetOneView_Previews: PreviewProvider {
     static var previews: some View {
-        SheetOneView(sticky: .constant(Sticky.sampleData[0]))
+        SheetOneView()
     }
 }
