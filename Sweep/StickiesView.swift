@@ -10,10 +10,10 @@ import SwiftUI
 struct StickiesView: View {
     
     @Binding var stickiesData: [Sticky]
+    @State private var showSheet: Bool = false
     
     @GestureState private var startLocation: CGPoint? = nil
-    
-    @State private var showSheet: Bool = false
+   
     
     var body: some View {
         ZStack {
@@ -101,7 +101,9 @@ struct StickiesView: View {
                     .allowsHitTesting(false)
                     
                     Button {
-                        showSheet = true
+                        withAnimation {
+                            showSheet = true
+                        }
                         stickiesData.append(contentsOf: [
                             Sticky(description: "We need to clean the kitchen!", icon: "circle.fill", theme: .teal, position: CGPoint(x: 10, y: 200), rotation: 5.0, scale: 1.0),
                             Sticky(description: "There's dirt in the entrance...", icon: "triangle.fill", theme: .orange, position: CGPoint(x: -40, y: -100), rotation: 2.0, scale: 1.0),
@@ -129,9 +131,8 @@ struct StickiesView: View {
             .ignoresSafeArea()
             
             if showSheet {
-                withAnimation {
-                    SheetOneView()
-                }
+                SheetOneView(showSheet: $showSheet)
+                    .transition(AnyTransition.opacity.animation(.easeInOut))
             }
         }
     }

@@ -11,6 +11,7 @@ struct SheetOneView: View {
     
     let columns = [GridItem(.adaptive(minimum: 48))]
     
+    @Binding var showSheet: Bool
     @State private var newColor: Theme = .bubblegum
     
     var body: some View {
@@ -28,7 +29,7 @@ struct SheetOneView: View {
                         Text("Choose a color")
                             .font(.system(.title3, design: .rounded, weight: .bold))
                         Spacer()
-                        Button(action: {}) {
+                        Button(action: {showSheet = false}) {
                             Image(systemName: "xmark")
                                 .resizable()
                                 .scaledToFit()
@@ -97,12 +98,12 @@ struct SheetOneView: View {
                 .padding(.horizontal)
             }
         }
-        .background(.ultraThinMaterial.opacity(0.8))
+        .background(.ultraThinMaterial)
     }
 }
 
 struct SheetOneView_Previews: PreviewProvider {
     static var previews: some View {
-        SheetOneView()
+        SheetOneView(showSheet: .constant(true))
     }
 }
