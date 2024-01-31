@@ -11,6 +11,7 @@ struct StickiesView: View {
     
     @Binding var stickiesData: [Sticky]
     @State private var showSheet: Bool = false
+    @State private var newColor: Theme = .bubblegum
     
     @GestureState private var startLocation: CGPoint? = nil
    
@@ -131,8 +132,7 @@ struct StickiesView: View {
             .ignoresSafeArea()
             
             if showSheet {
-                SheetOneView(showSheet: $showSheet)
-                    .transition(AnyTransition.opacity.animation(.easeInOut))
+                SheetOneView(showSheet: $showSheet, newColor: $newColor)
             }
         }
     }
