@@ -11,7 +11,10 @@ struct StickiesView: View {
     
     @Binding var stickiesData: [Sticky]
     @State private var showSheet: Bool = false
+    @State private var colorIsShowing: Bool = false
+    @State private var textIsShowing: Bool = false
     @State private var newColor: Theme = .bubblegum
+    @State private var newText: String = ""
     
     @GestureState private var startLocation: CGPoint? = nil
    
@@ -104,6 +107,7 @@ struct StickiesView: View {
                     Button {
                         withAnimation {
                             showSheet = true
+                            colorIsShowing = true
                         }
                         stickiesData.append(contentsOf: [
                             Sticky(description: "We need to clean the kitchen!", icon: "circle.fill", theme: .teal, position: CGPoint(x: 10, y: 200), rotation: 5.0, scale: 1.0),
@@ -132,7 +136,7 @@ struct StickiesView: View {
             .ignoresSafeArea()
             
             if showSheet {
-                SheetOneView(showSheet: $showSheet, newColor: $newColor)
+                SheetOneView(showSheet: $showSheet, colorIsShowing: $colorIsShowing, textIsShowing: $textIsShowing, newColor: $newColor, newText: $newText)
             }
         }
     }

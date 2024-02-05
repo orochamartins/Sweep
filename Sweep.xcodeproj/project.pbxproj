@@ -11,6 +11,7 @@
 		7F76A4E42B15DAD300F5E23E /* SingleStickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76A4E32B15DAD300F5E23E /* SingleStickyView.swift */; };
 		7F782CF72B6A3CEA002C05D5 /* ColorSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F782CF62B6A3CEA002C05D5 /* ColorSheetView.swift */; };
 		7F7886B62B43FE4900DF55D6 /* StickyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7886B52B43FE4900DF55D6 /* StickyBackgroundView.swift */; };
+		7F7A1A642B716386009DAA2D /* TextSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A1A632B716386009DAA2D /* TextSheetView.swift */; };
 		7F8446BE2B56779300AE838C /* SheetOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8446BD2B56779300AE838C /* SheetOneView.swift */; };
 		7F857D8E2B1485B300C5E15B /* SweepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F857D8D2B1485B300C5E15B /* SweepApp.swift */; };
 		7F857D902B1485B300C5E15B /* StickiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F857D8F2B1485B300C5E15B /* StickiesView.swift */; };
@@ -26,6 +27,7 @@
 		7F778B902B34AD2A00BAB90C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7F782CF62B6A3CEA002C05D5 /* ColorSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSheetView.swift; sourceTree = "<group>"; };
 		7F7886B52B43FE4900DF55D6 /* StickyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyBackgroundView.swift; sourceTree = "<group>"; };
+		7F7A1A632B716386009DAA2D /* TextSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSheetView.swift; sourceTree = "<group>"; };
 		7F8446BD2B56779300AE838C /* SheetOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetOneView.swift; sourceTree = "<group>"; };
 		7F857D8A2B1485B300C5E15B /* Sweep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sweep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F857D8D2B1485B300C5E15B /* SweepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweepApp.swift; sourceTree = "<group>"; };
@@ -52,6 +54,8 @@
 			children = (
 				7F7886B52B43FE4900DF55D6 /* StickyBackgroundView.swift */,
 				7F76A4E32B15DAD300F5E23E /* SingleStickyView.swift */,
+				7F782CF62B6A3CEA002C05D5 /* ColorSheetView.swift */,
+				7F7A1A632B716386009DAA2D /* TextSheetView.swift */,
 				7F8446BD2B56779300AE838C /* SheetOneView.swift */,
 			);
 			path = Components;
@@ -60,7 +64,6 @@
 		7F857D812B1485B300C5E15B = {
 			isa = PBXGroup;
 			children = (
-				7F782CF62B6A3CEA002C05D5 /* ColorSheetView.swift */,
 				7F857D8C2B1485B300C5E15B /* Sweep */,
 				7F857D8B2B1485B300C5E15B /* Products */,
 			);
@@ -179,6 +182,7 @@
 				7F857D9D2B148B1300C5E15B /* Theme.swift in Sources */,
 				7F857D902B1485B300C5E15B /* StickiesView.swift in Sources */,
 				7F7886B62B43FE4900DF55D6 /* StickyBackgroundView.swift in Sources */,
+				7F7A1A642B716386009DAA2D /* TextSheetView.swift in Sources */,
 				7F8446BE2B56779300AE838C /* SheetOneView.swift in Sources */,
 				7F857D9F2B148CE700C5E15B /* Sticky.swift in Sources */,
 				7F782CF72B6A3CEA002C05D5 /* ColorSheetView.swift in Sources */,
