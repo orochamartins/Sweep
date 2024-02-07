@@ -43,12 +43,94 @@ struct TextSheetView: View {
                 .padding(.bottom, 16)
             
             VStack {
+                HStack {
+                    VStack {
+                        Button {
+                            
+                        } label: {
+                            Text("Aa")
+                        }
+                        .foregroundColor(.black)
+                        .font(.system(.title2, design: .default, weight: .semibold))
+                        .frame(maxWidth: 80, minHeight: 50)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 16)
+                                .strokeBorder(Color(.systemGray5), lineWidth: 1)
+                        }
+                        Text("Default")
+                            .font(.system(size: 15, design: .rounded))
+                            .foregroundColor(Color(.systemGray3))
+                    }
+                    .contentShape(Rectangle())
+                    
+                    VStack {
+                        Button {
+                            
+                        } label: {
+                            Text("Aa")
+                        }
+                        .foregroundColor(.black)
+                        .font(.system(.title2, design: .rounded, weight: .semibold))
+                        .frame(maxWidth: 80, minHeight: 50)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 16)
+                                .strokeBorder(.black.gradient, lineWidth: 4)
+                        }
+                        Text("Rounded")
+                            .font(.system(size: 15, design: .rounded))
+                            .foregroundColor(Color(.systemGray3))
+                    }
+                    .contentShape(Rectangle())
+                    
+                    VStack {
+                        Button {
+                            
+                        } label: {
+                            Text("Aa")
+                        }
+                        .foregroundColor(.black)
+                        .font(.system(.title2, design: .serif, weight: .semibold))
+                        .frame(maxWidth: 80, minHeight: 50)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 16)
+                                .strokeBorder(Color(.systemGray5), lineWidth: 1)
+                        }
+                        Text("Serif")
+                            .font(.system(size: 15, design: .rounded))
+                            .foregroundColor(Color(.systemGray3))
+                    }
+                    .contentShape(Rectangle())
+                    
+                    VStack {
+                        Button {
+                            
+                        } label: {
+                            Text("Aa")
+                        }
+                        .foregroundColor(.black)
+                        .font(.system(.title2, design: .monospaced, weight: .semibold))
+                        .frame(maxWidth: 80, minHeight: 50)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 16)
+                                .strokeBorder(Color(.systemGray5), lineWidth: 1)
+                        }
+                        Text("Mono")
+                            .font(.system(size: 15, design: .rounded))
+                            .foregroundColor(Color(.systemGray3))
+                    }
+                    .contentShape(Rectangle())
+                }
+            }
+            .padding(.bottom, 16)
+            .padding(.horizontal)
+            
+            VStack {
                 VStack(alignment: .leading) {
                     TextField("Message for the stickies", text: $newText)
                         .padding()
-                        .font(.system(.body, design: .rounded))
+                        .font(.system(.body, design: .rounded, weight: .medium))
                 }
-                .frame(height: 100, alignment: .top)
+                .frame(height: 80, alignment: .top)
                 .overlay {
                     RoundedRectangle(cornerRadius: 16)
                         .stroke()
