@@ -38,7 +38,7 @@ struct SingleStickyView: View {
         .font(.custom("HomemadeApple-Regular.ttf", size: 40))
         .foregroundColor(sticky.theme.mainColor)
         .fontWeight(.semibold)
-        .fontDesign(.rounded)
+        .fontDesign(sticky.fontDesign)
     }
 }
 

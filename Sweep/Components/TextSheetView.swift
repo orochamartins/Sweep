@@ -12,6 +12,7 @@ struct TextSheetView: View {
     @Binding var showSheet: Bool
     @Binding var textIsShowing: Bool
     @Binding var newText: String
+    @Binding var newFontDesign: Font.Design
     
     var body: some View {
         VStack {
@@ -46,7 +47,7 @@ struct TextSheetView: View {
                 HStack {
                     VStack {
                         Button {
-                            
+                            newFontDesign = .default
                         } label: {
                             Text("Aa")
                         }
@@ -55,7 +56,7 @@ struct TextSheetView: View {
                         .frame(maxWidth: 80, minHeight: 50)
                         .overlay {
                             RoundedRectangle(cornerRadius: 16)
-                                .strokeBorder(Color(.systemGray5), lineWidth: 1)
+                                .strokeBorder(newFontDesign == .default ? .black : Color(.systemGray5), lineWidth: newFontDesign == .default ? 4 : 1)
                         }
                         Text("Default")
                             .font(.system(size: 15, design: .rounded))
@@ -65,7 +66,7 @@ struct TextSheetView: View {
                     
                     VStack {
                         Button {
-                            
+                            newFontDesign = .rounded
                         } label: {
                             Text("Aa")
                         }
@@ -74,7 +75,7 @@ struct TextSheetView: View {
                         .frame(maxWidth: 80, minHeight: 50)
                         .overlay {
                             RoundedRectangle(cornerRadius: 16)
-                                .strokeBorder(.black.gradient, lineWidth: 4)
+                                .strokeBorder(newFontDesign == .rounded ? .black : Color(.systemGray5), lineWidth: newFontDesign == .rounded ? 4 : 1)
                         }
                         Text("Rounded")
                             .font(.system(size: 15, design: .rounded))
@@ -84,7 +85,7 @@ struct TextSheetView: View {
                     
                     VStack {
                         Button {
-                            
+                            newFontDesign = .serif
                         } label: {
                             Text("Aa")
                         }
@@ -93,7 +94,7 @@ struct TextSheetView: View {
                         .frame(maxWidth: 80, minHeight: 50)
                         .overlay {
                             RoundedRectangle(cornerRadius: 16)
-                                .strokeBorder(Color(.systemGray5), lineWidth: 1)
+                                .strokeBorder(newFontDesign == .serif ? .black : Color(.systemGray5), lineWidth: newFontDesign == .serif ? 4 : 1)
                         }
                         Text("Serif")
                             .font(.system(size: 15, design: .rounded))
@@ -103,7 +104,7 @@ struct TextSheetView: View {
                     
                     VStack {
                         Button {
-                            
+                            newFontDesign = .monospaced
                         } label: {
                             Text("Aa")
                         }
@@ -112,7 +113,7 @@ struct TextSheetView: View {
                         .frame(maxWidth: 80, minHeight: 50)
                         .overlay {
                             RoundedRectangle(cornerRadius: 16)
-                                .strokeBorder(Color(.systemGray5), lineWidth: 1)
+                                .strokeBorder(newFontDesign == .monospaced ? .black : Color(.systemGray5), lineWidth: newFontDesign == .monospaced ? 4 : 1)
                         }
                         Text("Mono")
                             .font(.system(size: 15, design: .rounded))
@@ -174,6 +175,6 @@ struct TextSheetView: View {
 
 struct TextSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        TextSheetView(showSheet: .constant(true), textIsShowing: .constant(true), newText: .constant("This is a message"))
+        TextSheetView(showSheet: .constant(true), textIsShowing: .constant(true), newText: .constant("This is a message"), newFontDesign: .constant(.default))
     }
 }

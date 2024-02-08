@@ -15,6 +15,7 @@ struct StickiesView: View {
     @State private var textIsShowing: Bool = false
     @State private var newColor: Theme = .bubblegum
     @State private var newText: String = ""
+    @State private var newFontDesign: Font.Design = .default
     
     @GestureState private var startLocation: CGPoint? = nil
    
@@ -110,9 +111,9 @@ struct StickiesView: View {
                             colorIsShowing = true
                         }
                         stickiesData.append(contentsOf: [
-                            Sticky(description: "We need to clean the kitchen!", icon: "circle.fill", theme: .teal, position: CGPoint(x: 10, y: 200), rotation: 5.0, scale: 1.0),
-                            Sticky(description: "There's dirt in the entrance...", icon: "triangle.fill", theme: .orange, position: CGPoint(x: -40, y: -100), rotation: 2.0, scale: 1.0),
-                            Sticky(description: "Buy Christmas gifts!", icon: "square.fill", theme: .bubblegum, position: CGPoint(x: 110, y: 220), rotation: 0.0, scale: 1.0)
+                            Sticky(description: "We need to clean the kitchen!", icon: "circle.fill", theme: .teal, position: CGPoint(x: 10, y: 200), rotation: 5.0, scale: 1.0, fontDesign: .rounded),
+                            Sticky(description: "There's dirt in the entrance...", icon: "triangle.fill", theme: .orange, position: CGPoint(x: -40, y: -100), rotation: 2.0, scale: 1.0, fontDesign: .serif),
+                            Sticky(description: "Buy Christmas gifts!", icon: "square.fill", theme: .bubblegum, position: CGPoint(x: 110, y: 220), rotation: 0.0, scale: 1.0, fontDesign: .monospaced)
                         ])
                     } label: {
                         HStack {
@@ -136,7 +137,7 @@ struct StickiesView: View {
             .ignoresSafeArea()
             
             if showSheet {
-                SheetOneView(showSheet: $showSheet, colorIsShowing: $colorIsShowing, textIsShowing: $textIsShowing, newColor: $newColor, newText: $newText)
+                SheetOneView(showSheet: $showSheet, colorIsShowing: $colorIsShowing, textIsShowing: $textIsShowing, newColor: $newColor, newText: $newText, newFontDesign: $newFontDesign)
             }
         }
     }
