@@ -12,6 +12,7 @@
 		7F782CF72B6A3CEA002C05D5 /* ColorSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F782CF62B6A3CEA002C05D5 /* ColorSheetView.swift */; };
 		7F7886B62B43FE4900DF55D6 /* StickyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7886B52B43FE4900DF55D6 /* StickyBackgroundView.swift */; };
 		7F7A1A642B716386009DAA2D /* TextSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A1A632B716386009DAA2D /* TextSheetView.swift */; };
+		7F7A21A42B767F9F00402BDB /* IconSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A21A32B767F9F00402BDB /* IconSheetView.swift */; };
 		7F8446BE2B56779300AE838C /* SheetOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8446BD2B56779300AE838C /* SheetOneView.swift */; };
 		7F857D8E2B1485B300C5E15B /* SweepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F857D8D2B1485B300C5E15B /* SweepApp.swift */; };
 		7F857D902B1485B300C5E15B /* StickiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F857D8F2B1485B300C5E15B /* StickiesView.swift */; };
@@ -28,6 +29,7 @@
 		7F782CF62B6A3CEA002C05D5 /* ColorSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSheetView.swift; sourceTree = "<group>"; };
 		7F7886B52B43FE4900DF55D6 /* StickyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyBackgroundView.swift; sourceTree = "<group>"; };
 		7F7A1A632B716386009DAA2D /* TextSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSheetView.swift; sourceTree = "<group>"; };
+		7F7A21A32B767F9F00402BDB /* IconSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSheetView.swift; sourceTree = "<group>"; };
 		7F8446BD2B56779300AE838C /* SheetOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetOneView.swift; sourceTree = "<group>"; };
 		7F857D8A2B1485B300C5E15B /* Sweep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sweep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F857D8D2B1485B300C5E15B /* SweepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweepApp.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				7F782CF62B6A3CEA002C05D5 /* ColorSheetView.swift */,
 				7F7A1A632B716386009DAA2D /* TextSheetView.swift */,
 				7F8446BD2B56779300AE838C /* SheetOneView.swift */,
+				7F7A21A32B767F9F00402BDB /* IconSheetView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				7F857D9D2B148B1300C5E15B /* Theme.swift in Sources */,
 				7F857D902B1485B300C5E15B /* StickiesView.swift in Sources */,
+				7F7A21A42B767F9F00402BDB /* IconSheetView.swift in Sources */,
 				7F7886B62B43FE4900DF55D6 /* StickyBackgroundView.swift in Sources */,
 				7F7A1A642B716386009DAA2D /* TextSheetView.swift in Sources */,
 				7F8446BE2B56779300AE838C /* SheetOneView.swift in Sources */,

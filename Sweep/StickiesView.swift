@@ -13,9 +13,11 @@ struct StickiesView: View {
     @State private var showSheet: Bool = false
     @State private var colorIsShowing: Bool = false
     @State private var textIsShowing: Bool = false
+    @State private var iconIsShowing: Bool = false
     @State private var newColor: Theme = .bubblegum
     @State private var newText: String = ""
     @State private var newFontDesign: Font.Design = .default
+    @State private var newIcon: String = "circle.fill"
     
     @GestureState private var startLocation: CGPoint? = nil
    
@@ -137,7 +139,7 @@ struct StickiesView: View {
             .ignoresSafeArea()
             
             if showSheet {
-                SheetOneView(showSheet: $showSheet, colorIsShowing: $colorIsShowing, textIsShowing: $textIsShowing, newColor: $newColor, newText: $newText, newFontDesign: $newFontDesign)
+                SheetOneView(showSheet: $showSheet, colorIsShowing: $colorIsShowing, textIsShowing: $textIsShowing, iconIsShowing: $iconIsShowing, newColor: $newColor, newText: $newText, newFontDesign: $newFontDesign, newIcon: $newIcon)
             }
         }
     }

@@ -11,6 +11,7 @@ struct TextSheetView: View {
     
     @Binding var showSheet: Bool
     @Binding var textIsShowing: Bool
+    @Binding var iconIsShowing: Bool
     @Binding var newText: String
     @Binding var newFontDesign: Font.Design
     
@@ -145,7 +146,8 @@ struct TextSheetView: View {
                 .padding(.horizontal)
             
             Button {
-                
+                textIsShowing = false
+                iconIsShowing = true
             } label: {
                 HStack {
                     Text("Continue")
@@ -175,6 +177,6 @@ struct TextSheetView: View {
 
 struct TextSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        TextSheetView(showSheet: .constant(true), textIsShowing: .constant(true), newText: .constant("This is a message"), newFontDesign: .constant(.default))
+        TextSheetView(showSheet: .constant(true), textIsShowing: .constant(true), iconIsShowing: .constant(false), newText: .constant("This is a message"), newFontDesign: .constant(.default))
     }
 }
