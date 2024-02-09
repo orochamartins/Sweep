@@ -88,11 +88,34 @@ struct IconSheetView: View {
             }
             .padding(.horizontal)
             .padding(.bottom)
+            .glow()
         }
         .frame(maxWidth: .infinity)
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 32))
         .padding(.horizontal)
+    }
+}
+
+struct Glow: ViewModifier {
+    @State private var throb = false
+    func body(content: Content) -> some View {
+        ZStack {
+            content
+                //.blur(radius: throb ? 7 : 3)
+                .shadow(color: .red, radius: throb ? 7 : 0)
+                .animation(.easeOut(duration: 1.2).repeatForever(), value: throb)
+                .onAppear {
+                    throb.toggle()
+                }
+            content
+        }
+    }
+}
+
+extension View {
+    func glow() -> some View {
+        modifier(Glow())
     }
 }
 
