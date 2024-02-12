@@ -112,15 +112,10 @@ struct StickiesView: View {
                             showSheet = true
                             colorIsShowing = true
                         }
-                        stickiesData.append(contentsOf: [
-                            Sticky(description: "We need to clean the kitchen!", icon: "circle.fill", theme: .teal, position: CGPoint(x: 10, y: 200), rotation: 5.0, scale: 1.0, fontDesign: .rounded),
-                            Sticky(description: "There's dirt in the entrance...", icon: "triangle.fill", theme: .orange, position: CGPoint(x: -40, y: -100), rotation: 2.0, scale: 1.0, fontDesign: .serif),
-                            Sticky(description: "Buy Christmas gifts!", icon: "square.fill", theme: .bubblegum, position: CGPoint(x: 110, y: 220), rotation: 0.0, scale: 1.0, fontDesign: .monospaced)
-                        ])
                     } label: {
                         HStack {
                             Image(systemName: "plus")
-                            Text("Add Stickie")
+                            Text("Add Sticky")
                         }
                         .padding()
                         .background(.black.gradient)
@@ -139,7 +134,7 @@ struct StickiesView: View {
             .ignoresSafeArea()
             
             if showSheet {
-                SheetOneView(showSheet: $showSheet, colorIsShowing: $colorIsShowing, textIsShowing: $textIsShowing, iconIsShowing: $iconIsShowing, newColor: $newColor, newText: $newText, newFontDesign: $newFontDesign, newIcon: $newIcon)
+                SheetOneView(stickiesData: $stickiesData, showSheet: $showSheet, colorIsShowing: $colorIsShowing, textIsShowing: $textIsShowing, iconIsShowing: $iconIsShowing, newColor: $newColor, newText: $newText, newFontDesign: $newFontDesign, newIcon: $newIcon)
             }
         }
     }

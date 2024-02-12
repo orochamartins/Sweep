@@ -9,16 +9,25 @@ import SwiftUI
 
 struct IconSheetView: View {
     
+    @Binding var stickiesData: [Sticky]
     let columns = [GridItem(.adaptive(minimum: 48))]
     @Binding var showSheet: Bool
     @Binding var colorIsShowing: Bool
     @Binding var textIsShowing: Bool
     @Binding var iconIsShowing: Bool
     @Binding var newIcon: String
+    @Binding var newColor: Theme
+    @Binding var newText: String
+    @Binding var newFontDesign: Font.Design
     
-    let iconArray = ["circle.fill", "triangle.fill", "square.fill", "heart.fill", "star.fill", "house.fill", "gamecontroller.fill", "briefcase.fill", "paintbrush.pointed.fill", "pawprint.fill", "leaf.fill", "sun.min.fill"]
+    let iconArray = ["circle.fill", "triangle.fill", "square.fill", "heart.fill", "star.fill", "diamond.fill", "pentagon.fill", "cross.fill", "cloud.fill", "pawprint.fill", "leaf.fill", "moonphase.first.quarter"]
     
     var body: some View {
+        
+        let screenBounds = UIScreen.main.bounds
+        let centerX = screenBounds.width / 2
+        let centerY = screenBounds.height / 2
+        
         VStack {
             HStack {
                 Text("Choose an icon pattern")
@@ -67,8 +76,11 @@ struct IconSheetView: View {
                 .padding(.horizontal)
             
             Button {
-                textIsShowing = true
-                colorIsShowing = false
+                iconIsShowing = false
+                
+                stickiesData.append(
+                    Sticky(description: newText, icon: newIcon, theme: newColor, position: CGPoint(x: centerX, y: centerY), rotation: 0, scale: 1.0, fontDesign: newFontDesign)
+                )
             } label: {
                 HStack {
                     Text("Make it happen")
@@ -88,7 +100,7 @@ struct IconSheetView: View {
             }
             .padding(.horizontal)
             .padding(.bottom)
-            .glow()
+            //.glow()
         }
         .frame(maxWidth: .infinity)
         .background(.white)
@@ -121,6 +133,7 @@ extension View {
 
 struct IconSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        IconSheetView(showSheet: .constant(true), colorIsShowing: .constant(false), textIsShowing: .constant(false), iconIsShowing: .constant(true), newIcon: .constant("circle.fill"))
+        IconSheetView(stickiesData: .constant(Sticky.sampleData), showSheet: .constant(true), colorIsShowing: .constant(false), textIsShowing: .constant(false), iconIsShowing: .constant(true), newIcon: .constant("circle.fill"), newColor: .constant(.bubblegum), newText: .constant("Default text here"), newFontDesign: .constant(.default)
+        )
     }
 }

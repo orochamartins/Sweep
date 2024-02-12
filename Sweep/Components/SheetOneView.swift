@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SheetOneView: View {
     
+    @Binding var stickiesData: [Sticky]
     @Binding var showSheet: Bool
     @Binding var colorIsShowing: Bool
     @Binding var textIsShowing: Bool
@@ -37,7 +38,7 @@ struct SheetOneView: View {
                 }
                 
                 if iconIsShowing {
-                    IconSheetView(showSheet: $showSheet, colorIsShowing: $colorIsShowing, textIsShowing: $textIsShowing, iconIsShowing: $iconIsShowing, newIcon: $newIcon)
+                    IconSheetView(stickiesData: $stickiesData, showSheet: $showSheet, colorIsShowing: $colorIsShowing, textIsShowing: $textIsShowing, iconIsShowing: $iconIsShowing, newIcon: $newIcon, newColor: $newColor, newText: $newText, newFontDesign: $newFontDesign)
                 }
             }
         }
@@ -47,6 +48,6 @@ struct SheetOneView: View {
 
 struct SheetOneView_Previews: PreviewProvider {
     static var previews: some View {
-        SheetOneView(showSheet: .constant(true), colorIsShowing: .constant(true), textIsShowing: .constant(false), iconIsShowing: .constant(false), newColor: .constant(.bubblegum), newText: .constant("New message here"), newFontDesign: .constant(.default), newIcon: .constant("circle.fill"))
+        SheetOneView(stickiesData: .constant(Sticky.sampleData), showSheet: .constant(true), colorIsShowing: .constant(true), textIsShowing: .constant(false), iconIsShowing: .constant(false), newColor: .constant(.bubblegum), newText: .constant("New message here"), newFontDesign: .constant(.default), newIcon: .constant("circle.fill"))
     }
 }
