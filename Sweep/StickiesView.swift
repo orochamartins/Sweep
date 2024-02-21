@@ -111,6 +111,12 @@ struct StickiesView: View {
                         withAnimation {
                             showSheet = true
                             colorIsShowing = true
+                            iconIsShowing = false
+                            
+                            newColor = .bubblegum
+                            newFontDesign = .default
+                            newText = ""
+                            newIcon = "circle.fill"
                         }
                     } label: {
                         HStack {

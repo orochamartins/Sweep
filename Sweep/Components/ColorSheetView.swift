@@ -21,7 +21,9 @@ struct ColorSheetView: View {
                 Text("Choose a color")
                     .font(.system(.title3, design: .rounded, weight: .bold))
                 Spacer()
-                Button(action: {showSheet = false}) {
+                Button(action: {
+                    showSheet = false
+                }) {
                     Image(systemName: "xmark")
                         .resizable()
                         .scaledToFit()

@@ -34,7 +34,7 @@ struct SheetOneView: View {
                 }
                 
                 if textIsShowing {
-                    TextSheetView(showSheet: $showSheet, textIsShowing: $textIsShowing, iconIsShowing: $iconIsShowing, newText: $newText, newFontDesign: $newFontDesign)
+                    TextSheetView(showSheet: $showSheet, textIsShowing: $textIsShowing, iconIsShowing: $iconIsShowing, newColor: $newColor, newText: $newText, newFontDesign: $newFontDesign)
                 }
                 
                 if iconIsShowing {

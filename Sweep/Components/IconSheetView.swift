@@ -33,7 +33,9 @@ struct IconSheetView: View {
                 Text("Choose an icon pattern")
                     .font(.system(.title3, design: .rounded, weight: .bold))
                 Spacer()
-                Button(action: {showSheet = false}) {
+                Button(action: {
+                    showSheet = false
+                }) {
                     Image(systemName: "xmark")
                         .resizable()
                         .scaledToFit()
@@ -77,10 +79,9 @@ struct IconSheetView: View {
             
             Button {
                 iconIsShowing = false
+                showSheet = false
                 
-                stickiesData.append(
-                    Sticky(description: newText, icon: newIcon, theme: newColor, position: CGPoint(x: centerX, y: centerY), rotation: 0, scale: 1.0, fontDesign: newFontDesign)
-                )
+                stickiesData.insert(Sticky(description: newText.count > 0 ? newText : "Write a message here!", icon: newIcon, theme: newColor, position: CGPoint(x: centerX, y: centerY - 118), rotation: 0, scale: 1.0, fontDesign: newFontDesign), at: 0)
             } label: {
                 HStack {
                     Text("Make it happen")
