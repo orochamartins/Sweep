@@ -103,10 +103,6 @@ struct IconSheetView: View {
             .padding(.bottom)
             //.glow()
         }
-        .frame(maxWidth: .infinity)
-        .background(.white)
-        .clipShape(RoundedRectangle(cornerRadius: 32))
-        .padding(.horizontal)
     }
 }
 

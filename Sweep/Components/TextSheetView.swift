@@ -169,10 +169,6 @@ struct TextSheetView: View {
             .padding(.horizontal)
             .padding(.bottom)
         }
-        .frame(maxWidth: .infinity)
-        .background(.white)
-        .clipShape(RoundedRectangle(cornerRadius: 32))
-        .padding(.horizontal)
     }
 }
 
