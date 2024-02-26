@@ -11,6 +11,7 @@ struct StickiesView: View {
     
     @Binding var stickiesData: [Sticky]
     @State private var showSheet: Bool = false
+    @State private var delayedShowSheet: Bool = false
     @State private var colorIsShowing: Bool = false
     @State private var textIsShowing: Bool = false
     @State private var iconIsShowing: Bool = false
@@ -20,6 +21,8 @@ struct StickiesView: View {
     @State private var newIcon: String = "circle.fill"
     
     @GestureState private var startLocation: CGPoint? = nil
+    
+    @State private var sheetOpacity = 1.0
    
     
     var body: some View {
@@ -110,6 +113,7 @@ struct StickiesView: View {
                     Button {
                         withAnimation {
                             showSheet = true
+                            delayedShowSheet = true
                             colorIsShowing = true
                             iconIsShowing = false
                             
@@ -117,6 +121,8 @@ struct StickiesView: View {
                             newFontDesign = .default
                             newText = ""
                             newIcon = "circle.fill"
+                            
+                            sheetOpacity = 1.0
                         }
                     } label: {
                         HStack {
@@ -139,8 +145,14 @@ struct StickiesView: View {
             }
             .ignoresSafeArea()
             
-            if showSheet {
-                SheetOneView(stickiesData: $stickiesData, showSheet: $showSheet, colorIsShowing: $colorIsShowing, textIsShowing: $textIsShowing, iconIsShowing: $iconIsShowing, newColor: $newColor, newText: $newText, newFontDesign: $newFontDesign, newIcon: $newIcon)
+            if delayedShowSheet {
+                SheetOneView(stickiesData: $stickiesData, showSheet: $showSheet, delayedShowSheet: $delayedShowSheet, colorIsShowing: $colorIsShowing, textIsShowing: $textIsShowing, iconIsShowing: $iconIsShowing, newColor: $newColor, newText: $newText, newFontDesign: $newFontDesign, newIcon: $newIcon)
+                    .opacity(sheetOpacity)
+                    .onChange(of: showSheet == false) { _ in
+                        withAnimation {
+                            sheetOpacity = 0
+                        }
+                    }
             }
         }
     }

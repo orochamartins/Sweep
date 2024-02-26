@@ -11,6 +11,7 @@ struct SheetOneView: View {
     
     @Binding var stickiesData: [Sticky]
     @Binding var showSheet: Bool
+    @Binding var delayedShowSheet: Bool
     @Binding var colorIsShowing: Bool
     @Binding var textIsShowing: Bool
     @Binding var iconIsShowing: Bool
@@ -31,12 +32,18 @@ struct SheetOneView: View {
                 
                 VStack {
                     SingleStickyView(sticky: Sticky(description: newText.isEmpty ? "Write a message here!" : newText, icon: newIcon, theme: newColor, position: CGPoint(x: 10, y: 200), rotation: 5.0, scale: 1.0, fontDesign: newFontDesign))
+                        .animation(.easeOut, value: textIsShowing)
                 }
                 .frame(maxHeight: .infinity)
                 .offset(stickyOffset)
                 .onAppear {
                     withAnimation(.spring()) {
                         stickyOffset = CGSize(width: 0, height: 0)
+                    }
+                }
+                .onChange(of: showSheet == false) { _ in
+                    withAnimation(.spring()) {
+                        stickyOffset = CGSize(width: 0, height: -UIScreen.main.bounds.height / 2)
                     }
                 }
                 
@@ -63,14 +70,28 @@ struct SheetOneView: View {
                         sheetOffset = CGSize(width: 0, height: 0)
                     }
                 }
+                .onChange(of: showSheet == false) { _ in
+                    withAnimation(.spring()) {
+                        sheetOffset = CGSize(width: 0, height: UIScreen.main.bounds.height / 2)
+                    }
+                }
+                .animation(.easeOut, value: textIsShowing)
             }
         }
         .background(.ultraThinMaterial)
+        .onChange(of: showSheet == false) { _ in
+            Task {
+                if showSheet == false {
+                    try? await Task.sleep(nanoseconds: 1_000_000_000)
+                    delayedShowSheet = false
+                }
+            }
+        }
     }
 }
 
 struct SheetOneView_Previews: PreviewProvider {
     static var previews: some View {
-        SheetOneView(stickiesData: .constant(Sticky.sampleData), showSheet: .constant(true), colorIsShowing: .constant(true), textIsShowing: .constant(false), iconIsShowing: .constant(false), newColor: .constant(.bubblegum), newText: .constant("New message here"), newFontDesign: .constant(.default), newIcon: .constant("circle.fill"))
+        SheetOneView(stickiesData: .constant(Sticky.sampleData), showSheet: .constant(true), delayedShowSheet: .constant(false), colorIsShowing: .constant(true), textIsShowing: .constant(false), iconIsShowing: .constant(false), newColor: .constant(.bubblegum), newText: .constant("New message here"), newFontDesign: .constant(.default), newIcon: .constant("circle.fill"))
     }
 }
