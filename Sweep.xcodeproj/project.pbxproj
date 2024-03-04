@@ -20,6 +20,7 @@
 		7F857D952B1485B500C5E15B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F857D942B1485B500C5E15B /* Preview Assets.xcassets */; };
 		7F857D9D2B148B1300C5E15B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F857D9C2B148B1300C5E15B /* Theme.swift */; };
 		7F857D9F2B148CE700C5E15B /* Sticky.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F857D9E2B148CE700C5E15B /* Sticky.swift */; };
+		7FCD0F9A2B96432900ACBFF6 /* EditSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD0F992B96432900ACBFF6 /* EditSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		7F857D942B1485B500C5E15B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7F857D9C2B148B1300C5E15B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		7F857D9E2B148CE700C5E15B /* Sticky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticky.swift; sourceTree = "<group>"; };
+		7FCD0F992B96432900ACBFF6 /* EditSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				7F7886B52B43FE4900DF55D6 /* StickyBackgroundView.swift */,
 				7F76A4E32B15DAD300F5E23E /* SingleStickyView.swift */,
 				7F782CF62B6A3CEA002C05D5 /* ColorSheetView.swift */,
+				7FCD0F992B96432900ACBFF6 /* EditSheetView.swift */,
 				7F7A1A632B716386009DAA2D /* TextSheetView.swift */,
 				7F8446BD2B56779300AE838C /* SheetOneView.swift */,
 				7F7A21A32B767F9F00402BDB /* IconSheetView.swift */,
@@ -184,6 +187,7 @@
 			files = (
 				7F857D9D2B148B1300C5E15B /* Theme.swift in Sources */,
 				7F857D902B1485B300C5E15B /* StickiesView.swift in Sources */,
+				7FCD0F9A2B96432900ACBFF6 /* EditSheetView.swift in Sources */,
 				7F7A21A42B767F9F00402BDB /* IconSheetView.swift in Sources */,
 				7F7886B62B43FE4900DF55D6 /* StickyBackgroundView.swift in Sources */,
 				7F7A1A642B716386009DAA2D /* TextSheetView.swift in Sources */,

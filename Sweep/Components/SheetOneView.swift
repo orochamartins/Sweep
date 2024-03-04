@@ -71,7 +71,7 @@ struct SheetOneView: View {
                     }
                 }
                 .onChange(of: showSheet == false) { _ in
-                    withAnimation(.spring()) {
+                    withAnimation(.easeOut) {
                         sheetOffset = CGSize(width: 0, height: UIScreen.main.bounds.height / 2)
                     }
                 }
@@ -82,7 +82,7 @@ struct SheetOneView: View {
         .onChange(of: showSheet == false) { _ in
             Task {
                 if showSheet == false {
-                    try? await Task.sleep(nanoseconds: 1_000_000_000)
+                    try? await Task.sleep(nanoseconds: 500_000_000)
                     delayedShowSheet = false
                 }
             }

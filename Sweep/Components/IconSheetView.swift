@@ -78,7 +78,6 @@ struct IconSheetView: View {
                 .padding(.horizontal)
             
             Button {
-                iconIsShowing = false
                 showSheet = false
                 
                 stickiesData.insert(Sticky(description: newText.count > 0 ? newText : "Write a message here!", icon: newIcon, theme: newColor, position: CGPoint(x: centerX, y: centerY - 118), rotation: 0, scale: 1.0, fontDesign: newFontDesign), at: 0)

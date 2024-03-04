@@ -11,6 +11,7 @@ struct StickiesView: View {
     
     @Binding var stickiesData: [Sticky]
     @State private var showSheet: Bool = false
+    @State private var editIsShowing: Bool = false
     @State private var delayedShowSheet: Bool = false
     @State private var colorIsShowing: Bool = false
     @State private var textIsShowing: Bool = false
@@ -39,6 +40,9 @@ struct StickiesView: View {
                             .scaleEffect(sticky.scale)
                             .rotationEffect(Angle(degrees: sticky.rotation))
                             .position(sticky.position)
+                            .onTapGesture {
+                                editIsShowing = true
+                            }
                             .gesture(
                                 DragGesture(minimumDistance: 0)
                                     .onChanged { gesture in
@@ -144,6 +148,10 @@ struct StickiesView: View {
                 }
             }
             .ignoresSafeArea()
+            
+            if editIsShowing {
+                EditSheetView(editIsShowing: $editIsShowing)
+            }
             
             if delayedShowSheet {
                 SheetOneView(stickiesData: $stickiesData, showSheet: $showSheet, delayedShowSheet: $delayedShowSheet, colorIsShowing: $colorIsShowing, textIsShowing: $textIsShowing, iconIsShowing: $iconIsShowing, newColor: $newColor, newText: $newText, newFontDesign: $newFontDesign, newIcon: $newIcon)
